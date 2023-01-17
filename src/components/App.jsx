@@ -1,3 +1,12 @@
+import { Route, Routes } from 'react-router-dom';
+import { Layout } from './Layout/Layout';
+
 export const App = () => {
-  return <div>Hello, its 5-th homework</div>;
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}></Route>
+      </Routes>
+    </>
+  );
 };
