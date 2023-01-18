@@ -8,11 +8,10 @@ export const HeaderContainer = styled.header`
   gap: 12px;
   padding: 10px;
   margin-bottom: 16px;
-  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-`;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;`
 
 export const NavItem = styled(NavLink)`
-  padding: 10px 14px;
+  padding: 10px 18px;
   font-weight: 400;
   font-size: 18px;
   text-decoration: none;
