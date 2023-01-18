@@ -1,6 +1,6 @@
 import { fetchTrendingMovies } from 'components/services/MovieAPI';
-import { useState,useEffect } from 'react';
-import { List, NavItem, Title } from 'components/TrendingList/TrendingList.styled';
+import { useState, useEffect } from 'react';
+import { TrendingList } from 'components/TrendingList/TrendingList';
 
 export const Home = () => {
   const [trendingMovie, setTrendingMovie] = useState([]);
@@ -9,13 +9,9 @@ export const Home = () => {
     fetchTrendingMovies().then(setTrendingMovie);
   }, []);
 
-
   return (
-    <List>
-      <Title>Trending today</Title>
-      {trendingMovie.map(({id, title}) => (
-        <NavItem key={id}>{title}</NavItem>
-      ))}
-    </List>
+    <>
+      <TrendingList movie={trendingMovie} />
+    </>
   );
 };
