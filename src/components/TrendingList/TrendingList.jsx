@@ -4,12 +4,14 @@ import {
   Title,
 } from 'components/TrendingList/TrendingList.styled';
 
-export const TrendingList = ({ movie }) => {
+export const TrendingList = ({ movies }) => {
   return (
     <List>
       <Title>Trending today</Title>
-      {movie.map(({ id, title }) => (
-        <NavItem key={id}>{title}</NavItem>
+      {movies.map(({ id, title }) => (
+        <NavItem to={`/movies/${id}`} key={id}>
+          {title}
+        </NavItem>
       ))}
     </List>
   );
