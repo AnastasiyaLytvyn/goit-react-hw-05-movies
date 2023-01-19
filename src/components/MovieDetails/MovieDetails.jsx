@@ -11,6 +11,7 @@ import {
   H3,
   List,
   ListItem,
+  Name,
 } from './MovieDetails.styled';
 
 export const MovieDetails = () => {
@@ -45,7 +46,7 @@ export const MovieDetails = () => {
         </Wrapper>
       </Container>
       <List>
-        <H3>Additional Information</H3>
+        <Name>Additional Information</Name>
         <ListItem to={`cast`}>Click here Cast</ListItem>
         <ListItem to={`reviews`}>Click here Reivews</ListItem>
         <Outlet />

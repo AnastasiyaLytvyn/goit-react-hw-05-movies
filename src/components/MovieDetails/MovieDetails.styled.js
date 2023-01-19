@@ -53,9 +53,19 @@ export const H3 = styled.h3`
 export const List = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
+  margin: 0;
+  padding: 10px 0;
 `;
 
 export const ListItem = styled(NavLink)`
+  padding: 0 40px;
   text-decoration: none;
+`;
+
+export const Name = styled.h3`
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  padding: 0 20px;
 `;
