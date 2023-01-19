@@ -34,3 +34,10 @@ export async function fetchMoviesCast(movie_id) {
   });
   return response.data.cast;
 }
+
+export async function fetchMoviesReviews(movie_id) {
+  const response = await axios(`/movie/${movie_id}/reviews`, {
+    params: { api_key: KEY },
+  });
+  return response.data.results;
+}
