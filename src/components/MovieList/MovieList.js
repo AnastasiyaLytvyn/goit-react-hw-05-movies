@@ -21,7 +21,9 @@ export const NavItem = styled(NavLink)`
 `;
 
 export const Title = styled.h2`
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
+  padding: 0px 40px 10px 40px;
+  margin: 0;
   color: black;
 `;
