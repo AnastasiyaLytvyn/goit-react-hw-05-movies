@@ -22,3 +22,12 @@ export async function fetchSearchMovies(query) {
   });
   return response.data.results;
 }
+
+export async function fetchMoviesDetails(movie_id){
+  const response =await axios(`/movie/${movie_id}`,{
+    params:{
+      api_key: KEY,
+    }
+  })
+  return response.data;
+}
