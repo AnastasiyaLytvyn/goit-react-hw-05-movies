@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -8,6 +8,11 @@ export const Container = styled.div`
   margin: 0;
   padding: 20px;
   border-bottom: 1px solid lightgrey;
+`;
+
+export const Button = styled(Link)`
+  margin-left: 20px;
+  text-decoration: none;
 `;
 
 export const Wrapper = styled.div`

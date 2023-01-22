@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-import { useParams, Outlet } from 'react-router-dom';
+import { useParams, useLocation, Outlet } from 'react-router-dom';
 import { fetchMoviesDetails } from 'services/MovieAPI';
 import {
   Container,
   Wrapper,
+  Button,
   Image,
   P,
   Title,
@@ -17,6 +18,8 @@ import {
 export const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
+  const location = useLocation();
+  const backLinkHref = location.state?.from ?? '/';
 
   useEffect(() => {
     fetchMoviesDetails(movieId).then(setMovie);
@@ -31,7 +34,9 @@ export const MovieDetails = () => {
 
   return (
     <>
+      <Button to={backLinkHref}>Back</Button>
       <Container>
+        
         <Image
           src={`https://image.tmdb.org/t/p/w500${poster_path}`}
           alt={title}
@@ -47,8 +52,8 @@ export const MovieDetails = () => {
       </Container>
       <List>
         <Name>Additional Information</Name>
-        <ListItem to={`cast`}>Click here Cast</ListItem>
-        <ListItem to={`reviews`}>Click here Reivews</ListItem>
+        <ListItem to={`cast`}>Cast</ListItem>
+        <ListItem to={`reviews`}>Reivews</ListItem>
         <Outlet />
       </List>
     </>
