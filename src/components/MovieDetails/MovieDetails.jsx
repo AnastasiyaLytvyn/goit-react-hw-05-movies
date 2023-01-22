@@ -15,7 +15,7 @@ import {
   Name,
 } from './MovieDetails.styled';
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
   const location = useLocation();
@@ -36,7 +36,6 @@ export const MovieDetails = () => {
     <>
       <Button to={backLinkHref}>Back</Button>
       <Container>
-        
         <Image
           src={`https://image.tmdb.org/t/p/w500${poster_path}`}
           alt={title}
@@ -59,3 +58,5 @@ export const MovieDetails = () => {
     </>
   );
 };
+
+export default MovieDetails;

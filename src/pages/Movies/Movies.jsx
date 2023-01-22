@@ -4,7 +4,7 @@ import { fetchSearchMovies } from 'services/MovieAPI';
 import { Form, Input, Button } from './Movies.styled';
 import { MoviesList } from 'components/MovieList/MoviesList';
 
-export const Movies = () => {
+const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('name') ?? '';
@@ -35,7 +35,9 @@ export const Movies = () => {
         <Input type="text" name="name" placeholder="Search movies"></Input>
         <Button type="submit">Search</Button>
       </Form>
-      {movies.length > 0 ? <MoviesList movies={ movies} /> : null}
+      {movies.length > 0 ? <MoviesList movies={movies} /> : null}
     </>
   );
 };
+
+export default Movies;
