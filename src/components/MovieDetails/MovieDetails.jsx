@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams, useLocation, Outlet } from 'react-router-dom';
 import { fetchMoviesDetails } from 'services/MovieAPI';
 import {
@@ -19,7 +19,9 @@ const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? '/';
+  
+  const locationFrom = location.state?.from ?? '/';
+  const locationRef = useRef(location.state?.location);
 
   useEffect(() => {
     fetchMoviesDetails(movieId).then(setMovie);
@@ -34,7 +36,7 @@ const MovieDetails = () => {
 
   return (
     <>
-      <Button to={backLinkHref}>Back</Button>
+      <Button to={locationRef.current ?? locationFrom}>Back</Button>
       <Container>
         <Image
           src={`https://image.tmdb.org/t/p/w500${poster_path}`}
@@ -51,8 +53,8 @@ const MovieDetails = () => {
       </Container>
       <List>
         <Name>Additional Information</Name>
-        <ListItem to={`cast`}>Cast</ListItem>
-        <ListItem to={`reviews`}>Reivews</ListItem>
+        <ListItem to={`cast`} state={{ from: locationFrom }}>Cast</ListItem>
+        <ListItem to={`reviews`} state={{ from: locationFrom }}>Reivews</ListItem>
         <Outlet />
       </List>
     </>
