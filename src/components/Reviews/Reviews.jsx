@@ -18,6 +18,7 @@ const Reviews = () => {
   return (
     <Container>
       <List>
+        {!review.length && <div>There is no information about review</div>}
         {review.map(({ id, author, content }) => (
           <Item key={id}>
             <Title>Author: {author}</Title>

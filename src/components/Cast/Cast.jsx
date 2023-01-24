@@ -18,6 +18,7 @@ const Cast = () => {
   return (
     <Container>
       <List>
+        {!cast.length && <div>There is no information about cast</div>}
         {cast.map(({ id, name, profile_path, character }) => (
           <Item key={id}>
             <Image

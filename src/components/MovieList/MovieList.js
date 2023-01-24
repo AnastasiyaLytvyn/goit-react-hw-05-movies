@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const List = styled.ul`
@@ -10,7 +10,7 @@ export const List = styled.ul`
   list-style: none;
 `;
 
-export const NavItem = styled(NavLink)`
+export const NavItem = styled(Link)`
   font-size: 14px;
   font-weight: 400;
   text-decoration: none;
@@ -29,7 +29,7 @@ export const Title = styled.h2`
 `;
 
 export const Desc = styled.h3`
-font-size: 18px;
+  font-size: 18px;
   font-weight: 500;
-margin: 10px 0;
-`
+  margin: 10px 0;
+`;

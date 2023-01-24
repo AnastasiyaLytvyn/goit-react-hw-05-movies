@@ -8,7 +8,7 @@ export const Form = styled.form`
 `;
 
 export const Input = styled.input`
-  width: 350px;
+  width: 300px;
   padding: 5px;
   background-color: lightyellow;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;

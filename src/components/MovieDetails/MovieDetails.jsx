@@ -19,7 +19,7 @@ const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
   const location = useLocation();
-  
+
   const locationFrom = location.state?.from ?? '/';
   const locationRef = useRef(location.state?.location);
 
@@ -53,8 +53,12 @@ const MovieDetails = () => {
       </Container>
       <List>
         <Name>Additional Information</Name>
-        <ListItem to={`cast`} state={{ from: locationFrom }}>Cast</ListItem>
-        <ListItem to={`reviews`} state={{ from: locationFrom }}>Reivews</ListItem>
+        <ListItem to={`cast`} state={{ from: locationFrom }}>
+          Cast
+        </ListItem>
+        <ListItem to={`reviews`} state={{ from: locationFrom }}>
+          Reivews
+        </ListItem>
         <Outlet />
       </List>
     </>
